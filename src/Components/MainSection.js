@@ -22,7 +22,6 @@ function MainSection() {
   const dispatch = useDispatch();
   const students = useSelector((state) => state.students.students);
   const studentStatus = useSelector((state) => state.students.status);
-  const error = useSelector((state) => state.students.error);
   const [form] = Form.useForm();
   const [open, setOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -162,7 +161,7 @@ function MainSection() {
           <div className="w-full md:w-[614px] h-[48px] rounded-[12px] px-4 md:px-[20px] bg-white flex items-center">
             <div className="w-[157px] h-[20px] gap-[10px] flex">
               <div className="w-[18px] h-[18px]">
-                <img src={Search} className="w-[18px] h-[18px]" />
+                <img src={Search} alt="Search" className="w-[18px] h-[18px]" />
               </div>
               <div className="flex-1">
                 <p className="w-[129px] h-[20px] font-noto text-[14px] font-medium leading-[20px] text-left text-searchGray">
@@ -175,17 +174,17 @@ function MainSection() {
           <div className="w-[473px] h-[48px] flex items-center gap-[40px] justify-end">
             <div className="w-[24px] h-[24px]">
               <img
-                src={Help}
+                src={Help} alt="Help"
                 className="w-[24px] h-[24px] left-[2px] relative"
-                alt="Help"
+                
               />
             </div>
 
             <div className="relative w-[24px] h-[24px]">
               <img
-                src={Message}
+                src={Message} alt="Message"
                 className="w-[20px] h-[19.5px] top-[3px] left-[2px] relative"
-                alt="Message"
+                
               />
               <div className="absolute top-0 right-[-3px] w-[11px] h-[11px] border-2 border-solid border-[#FFFFFF] bg-redDot rounded-full"></div>
             </div>
