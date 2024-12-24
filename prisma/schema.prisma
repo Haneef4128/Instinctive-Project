@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgresql://postgres.vycsfkbcldogonloknjw:AxIxPYUPsLNNuxAT@aws-0-ap-south-1.pooler.supabase.com:5432/postgres"
+}
+
+model Instinctive {
+  id          Int      @id @default(autoincrement()) // Auto-incrementing primary key
+  name       String   @unique @map("Student Name")
+  cohort     String   @map("Cohort")
+  courses    String   @map("Courses")
+  dateJoined   DateTime     @map("Date Joined")
+  lastLogin  DateTime @map("Last login")
+  status     Boolean  @map("Status")
+}
