@@ -2,26 +2,26 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchStudents = createAsyncThunk('students/fetchStudents', async () => {
-  const response = await axios.get('http://localhost:3000/api/data');
+  const response = await axios.get('/api/data');
   return response.data;
 });
 
 export const addStudent = createAsyncThunk('students/addStudent', async (newStudent) => {
-  const response = await axios.post('http://localhost:3000/api/data', newStudent, {
+  const response = await axios.post('/api/data', newStudent, {
     headers: { 'Content-Type': 'application/json' },
   });
   return response.data;
 });
 
 export const updateStudent = createAsyncThunk('students/updateStudent', async (updatedStudent) => {
-  const response = await axios.put(`http://localhost:3000/api/${updatedStudent.id}`, updatedStudent, {
+  const response = await axios.put(`/api/${updatedStudent.id}`, updatedStudent, {
     headers: { 'Content-Type': 'application/json' },
   });
   return response.data;
 });
 
 export const deleteStudent = createAsyncThunk('students/deleteStudent', async (studentId) => {
-  await axios.delete(`http://localhost:3000/api/${studentId}`);
+  await axios.delete(`/api/${studentId}`);
   return studentId;
 });
 

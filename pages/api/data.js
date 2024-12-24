@@ -1,10 +1,10 @@
-import prisma from '../../src/prismaClient';
+import prisma from './prismaClient';
 import Cors from 'cors';
 
 // Initialize the CORS middleware
 // Include required CORS headers in the middleware
 const cors = Cors({
-  origin: 'http://localhost:3001', // Allow only this origin
+  origin: '*', // Allow only this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Add OPTIONS
   allowedHeaders: ['Content-Type', 'Authorization'], // Add any custom headers you need
 });

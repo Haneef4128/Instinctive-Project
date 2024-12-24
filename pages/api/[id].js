@@ -1,9 +1,9 @@
-import prisma from '../../src/prismaClient';
+import prisma from './prismaClient';
 import Cors from 'cors';
 
 // Initialize CORS
 const cors = Cors({
-  origin: 'http://localhost:3001', // Replace with the actual frontend origin
+  origin: '*', // Replace with the actual frontend origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 });
 
